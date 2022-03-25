@@ -1,7 +1,7 @@
 #-----Curso python video 10 condicionales-----
-print("Programa de evaluación de notas de alumnos")
+print("Programa de evaluación de notas de estudiantes")
 
-nota_alumno = input("Introduzca la nota del alumno: ") #el usuario ingresa la variable a evaluar
+nota_alumno = input("Introduzca la nota del estudiante: ") #el usuario ingresa la variable a evaluar
 
 def evaluacion(nota):                   #función
     valoracion="aprobado"
