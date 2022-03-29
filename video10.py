@@ -1,4 +1,4 @@
-#-----Curso python video 10 condicionales-----
+#-----Curso python video 10 condicionales I-----
 print("Programa de evaluación de notas de estudiantes")
 
 nota_alumno = input("Introduzca la nota del estudiante: ") #el usuario ingresa la variable a evaluar
