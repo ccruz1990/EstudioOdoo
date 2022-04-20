@@ -1,28 +1,53 @@
-#--------Curso python video 26 POO III--------------
+#--------Curso python video 26, 27 y 28 POO III, IV y V--------------
 class Coche():
-    largoChasis=250                 #Atributos de la clase
-    anchoChasis=120
-    ruedas=4
-    enMarcha=False
 
-    def arrancar(self):             #Métodos de la clase
+    def __init__(self):
+
+        self.__largoChasis=250                 #Atributos de la clase
+        self.__anchoChasis=120
+        self.__ruedas=4
+        self.__enMarcha=False
+
+    def arrancar(self, arrancamos):             #Métodos de la clase
+        self.__enMarcha=arrancamos
+        if (self.__enMarcha):
+            chequeo=self.__chequeo_interno()
+
+        if (self.__enMarcha and chequeo):
+            return "El coche está en marcha"
+        elif (self.__enMarcha and chequeo==False):
+            return "Algo anda mal, el coche no puede arrancar"
+        else:
+            return "El coche está parado"
+
         self.enMarcha=True
 
     def estado(self):
-        if (self.enMarcha):
+        print("El coche tiene ", self.__ruedas, "ruedas. Un ancho de ", self.__anchoChasis, " y un largo de ", self.__largoChasis)
 
-            return "El coche está en marcha"
+    def __chequeo_interno(self):
+
+        print("realizando chequeo interno")
+
+        self.gasolina="ok"
+        self.aceite="mal"
+        self.puertas="cerradas"
+
+        if (self.gasolina=="ok" and self.aceite=="ok" and self.puertas=="cerradas"):
+            return True
         else:
-            return  "El coche está parado"
+            return False
 
-miChoche = Coche()          #instancia de la clase
 
-print("El largo del chasis es: ", miChoche.largoChasis)     #acceso a los atributos de la clase
-print("El coche tiene ", miChoche.ruedas, " ruedas")
+miChoche = Coche()                  #instancia de la clase
 
-#miChoche.arrancar()
+print(miChoche.arrancar(True))
+miChoche.estado()        #acceso a los métodos de la clase
 
-print(miChoche.estado())                #acceso a los métodos de la clase
+print("------------A continuación creamos el 2do objeto---------------------")
 
+miChoche2 = Coche()
+print(miChoche.arrancar(False))
+miChoche2.estado()
 
 #-----------------------------------------------------------

@@ -19,7 +19,7 @@ print("Asignaturas optativas: Informática gráfica - Pruebas de software - Usab
 
 opcion=input("Escribe la asignatura escogida: ")
 
-asignatura=opcion.lower()
+asignatura=opcion.lower()               #transforma todas las letras a minúsculas
 
 if asignatura in ("informática gráfica", "pruebas de software", "usabilidad y accesibilidad"):
     print("Asignatura elegida: " + asignatura)
